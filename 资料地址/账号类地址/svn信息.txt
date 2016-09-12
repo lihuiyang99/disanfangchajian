@@ -1,0 +1,11 @@
+项目地址：svn://svn.maxrocky.com/M-迈动员工平台/pc
+账号：lihuiyang = mrlhy123@#$
+
+点击：first_instal_for_cnpml.sh  安装依赖包
+启动gulp
+端口号：3009
+
+
+
+迈动互联操作说明
+http://docs.maxrocky.com/docs/H5TeamDocOnline./chapter8/8.3.html

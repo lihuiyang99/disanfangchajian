@@ -1,0 +1,796 @@
+---------------------------------------------------------------01公司-网络媒体-趋势分布小图标修改后------------------------------------------------------
+
+1、特定人物情感分布
+
+
+app.title = '堆叠条形图';
+var width=476;
+var height=369;
+var colors = ['#e52b2b', '#5eb3f4', '#ababab'];
+option = {
+    color:colors,
+    width:width,
+    height:height,
+    title : {
+        padding:[20,0,0,20],
+        text: '特定人物情感分布'
+    },
+    toolbox: {
+        left:720,
+        padding:[20,20,0,-200],
+        show : true,
+        feature : {
+
+            /*dataView : {show: true, readOnly: false},
+             magicType : {show: true, type: ['line', 'bar']},
+             restore : {show: true},*/
+            saveAsImage : {show: true}
+        }
+    },
+    legend: {
+        left:110,
+        padding:[80,0,0,0],
+        itemGap:70,
+        textStyle:{fontSize:'16',color:'#000',fontStyle:'normal',fontWeight:'500',fontFamily: 'sans-serif'},//文本样式
+        itemWidth:35,
+        itemHeight:16,
+        data: ['正面', '负面','中性']
+    },
+    grid: {
+        left: 110,
+        top: 120,
+        bottom: 40,
+        width: 374,
+        height:193
+
+    },
+    xAxis: {
+        type: 'value',
+        scale: false,
+
+        splitLine: {show: false},
+        axisLine: {show: false},
+        axisTick: {show: false},
+        axisLabel:{show:false},
+    },
+    yAxis: {
+        type: 'category',
+        nameGap: 16,
+        axisLine: {show: false, lineStyle: {color: '#ddd'}},
+        axisTick: {show: false, lineStyle: {color: '#ddd'}},
+        axisLabel: {interval: 0, textStyle: {color: '#000',fontSize:'14'}},
+        data: ['宋总','钱总','王总','赵总','张总','王总']
+    },
+
+    series: [
+        {
+            name: '正面',
+            type: 'bar',
+            barWidth : 10,
+            stack: '总量',
+            label: {
+             normal: {
+             show: false,
+             position: 'insideRight'
+             }
+             },
+            data: [41,69,41,57,35,41 ]
+        },
+        {
+            name: '负面',
+            type: 'bar',
+            stack: '总量',
+           
+            data: [9,15,12,21,30,18]
+        },
+        {
+            name: '中性',
+            type: 'bar',
+            stack: '总量',
+            data: [49,15,46,21,30,39]
+        }
+       
+    ]
+};
+
+----------------------------------------------
+媒体来源分布：
+
+
+app.title = '堆叠条形图';
+            var width=476;
+            var height=369;
+            var colors = ['#5eb3f4'];
+            option = {color: ['#e52b2b', '#5eb3f4', '#ababab'],
+          //        title: {
+          //          padding: [20, 0, 0, 20],
+          //          text: '媒体来源分布'
+          //        },
+          toolbox: {
+            feature: {
+              myTool2: {
+                show: true,
+                title: '下载此文件',
+                icon: 'image://asset/img/ps1/main/down_img.png',
+                onclick: function() {
+                  alert($("#line3").data('url'))
+                }
+              },
+              saveAsImage: {}
+            },
+            showTitle: true,
+            itemSize: 15,
+            itemGap: 10,
+            right: 0
+          },
+          tooltip: {
+            tooltipWidth: 40,
+            trigger: 'axis',
+            formatter: function(params) {
+              return '<span style="width:auto;display:inline-block;height:20; margin-right:5px;background:#6b6b6b">' +
+                params[0].name + ' : ' + Number(params[0].value + params[1].value + params[2].value) + '</span>' + '<br/>' +
+                params[0].seriesName + '占比 : ' + Number(params[0].value / (params[0].value + params[1].value + params[2].value) * 100).toFixed(0) + '%';
+  
+            },
+            axisPointer: {
+              type: 'shadow'
+            }
+          },
+          legend: {
+            //left: 110,
+            padding: [80, 0, 0, 0],
+            itemGap: 30,
+            textStyle: {
+              //fontSize: '16',
+              fontSize:'14',
+              color: '#000',
+              fontStyle: 'normal',
+              fontWeight: '500',
+              //fontFamily: 'sans-serif'
+            }, //文本样式
+            itemWidth: 35,
+            itemHeight: 16,
+            data: ['正面', '负面', '中性']
+          },
+          grid: {
+            left: 110,
+            top: 120,
+            bottom: 40
+  
+          },
+          xAxis: {
+            type: 'value',
+            scale: false,
+            //boundaryGap: [0, 0.01],
+            splitLine: {
+              show: false
+            },
+            axisLine: {
+              show: false
+            },
+            axisTick: {
+              show: false
+            },
+            axisLabel: {
+              show: true
+            },
+          },
+          yAxis: {
+            type: 'category',
+            nameGap: 16,
+            axisLine: {
+              show: false,
+              lineStyle: {
+                color: '#ddd'
+              }
+            },
+            axisTick: {
+              show: false,
+              lineStyle: {
+                color: '#ddd'
+              }
+            },
+            axisLabel: {
+              interval: 0,
+              textStyle: {
+                color: '#000',
+                fontSize: '14'
+              }
+            },
+            data: ['每日经济新闻', '证券时报', '21世纪经济报道', '新华网', '扬子晚报', '上海证券报', '京华时报', '中国证券报', '北京日报', '金融时报']
+          },
+  
+          series: [{
+            name: '正面',
+            type: 'bar',
+            barWidth: 10,
+            stack: '总量',
+            data: [650, 700, 750, 800, 850, 900, 950, 1000, 1050, 1100]
+          }, {
+            name: '负面',
+            type: 'bar',
+            stack: '总量',
+            data: [80, 100, 120, 140, 160, 200, 240, 280, 330, 350]
+          }, {
+            name: '中性',
+            type: 'bar',
+            stack: '总量',
+            data: [130, 180, 200, 210, 240, 250, 280, 300, 330, 550]
+          }]
+        };
+
+---------------------------------------------------------------04 公司-社交-微博-----------------------------------------------------
+传播者关键者综合分析
+
+
+app.title = '堆叠条形图';
+        var width=476;
+        var height=369;
+        var colors = ['#5eb3f4','#e52b2b'];
+        option = {
+            color:colors,
+            width:width,
+            height:height,
+            title : {
+                padding:[20,0,0,20],
+                text: '传播者关键者综合分析'
+            },
+            
+            toolbox: {
+                left:1100,
+                padding:[20,20,0,-200],
+                show : true,
+                feature : {myTool2: {
+                    show: true,
+                    title: '下载此文件',
+                    icon: 'image://asset/img/ps1/main/down_img.png',
+                    onclick: function() {
+                        alert($("#tu3").data('url'))
+                    }
+                },
+                    saveAsImage : {show: true}
+                },
+                showTitle: true,
+                itemSize: 15,
+                itemGap: 10,
+            },
+            legend: {
+                    left:360,
+                    padding:[80,0,0,0],
+                    itemGap:64,
+                    textStyle:{fontSize:'16',color:'#000',fontStyle:'normal',fontWeight:'500',fontFamily: 'sans-serif'},//文本样式
+                    itemWidth:40,
+                    itemHeight:10,
+                    data: ['男', '女']
+                },
+            tooltip: {
+                trigger: 'axis',
+                formatter: '{a0}: {c0}<br />{a1}: {c1}',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            grid: {
+                left: 110,
+                top: 110,
+                bottom: 40,
+                width: 808,
+                height:200
+        
+            },
+            xAxis : [
+                {
+                    
+                    type : 'category',
+                    data : ['00后', '90后', '80后', '70后', '60后'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+           
+            yAxis : [
+                {   
+                    max:4000,
+                    interval:1000,
+                    type : 'value',
+                    axisLabel: {
+                          show: true,
+                          formatter: '{value}'
+                        }
+                },
+                 {   
+                     max:4000,
+                    interval:1000,
+                    type : 'value',
+                    axisLabel: {
+                          show: false,
+                        }
+                }
+                
+            ],
+            
+        
+            series: [
+                {
+                    name:'男',
+                    type: 'bar',
+                    barWidth : 20,
+                    data: [2900,0,2700,2200,1450]
+                },
+                {
+                    name:'女',
+                    type: 'bar',
+                    barWidth : 20,
+                    data: [3450,2750,3200,1800,1600]
+                }
+            ]
+        };
+
+
+
+
+
+
+
+---------------------------------------------
+用户地域分布
+
+
+app.title = '堆叠条形图';
+var width=476;
+var height=369;
+var colors = ['#5eb3f4'];
+option = {
+    color:colors,
+    width:width,
+    height:height,
+    title : {
+        padding:[20,0,0,20],
+        text: '用户地域分布'
+    },
+    toolbox: {
+        left:720,
+        padding:[20,20,0,-200],
+        show : true,
+        feature : {myTool2: {
+            show: true,
+            title: '下载此文件',
+            icon: 'image://asset/img/ps1/main/down_img.png',
+            onclick: function() {
+                alert($("#tu3").data('url'))
+            }
+        },
+            saveAsImage : {show: true}
+        },
+        showTitle: true,
+        itemSize: 15,
+        itemGap: 10,
+    },
+
+    tooltip: {
+        trigger: 'axis',
+        formatter: function(params) {
+            return params[0].name  + ' : ' +params[0].value;
+          
+        },
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    grid: {
+        left: 110,
+        top: 60,
+        bottom: 40,
+        width: 328,
+        height:267
+
+    },
+    xAxis: {
+        type: 'value',
+        scale: false,
+        //boundaryGap: [0, 0.01],
+        splitLine: {show: false},
+        axisLine: {show: false},
+        axisTick: {show: false},
+        axisLabel:{show:true},
+    },
+    yAxis: {
+        type: 'category',
+        nameGap: 16,
+        axisLine: {show: false, lineStyle: {color: '#ddd'}},
+        axisTick: {show: false, lineStyle: {color: '#ddd'}},
+        axisLabel: {interval: 0, textStyle: {color: '#000',fontSize:'14'}},
+        data: ['杭州','沈阳','合肥','深圳','广州','上海','北京']
+    },
+
+    series: [
+        {
+            type: 'bar',
+            barWidth : 10,
+            stack: '总量',
+            data: [1400,1250,1600,1700,1500,1800,2000 ]
+        }
+    ]
+};
+data: ['1、上海','2、北京','3、广东','4、江苏','5、浙江','6、河南','7、河北','8、山东','9、江西','10、四川']
+----------------------------------------
+年龄分布
+
+app.title = '堆叠条形图';
+        var width=476;
+        var height=369;
+        var colors = ['#5eb3f4'];
+        option = {
+            color:colors,
+            width:width,
+            height:height,
+            title : {
+                padding:[20,0,0,20],
+                text: '年龄分布'
+            },
+            toolbox: {
+                left:720,
+                padding:[20,20,0,-200],
+                show : true,
+                feature : {myTool2: {
+                    show: true,
+                    title: '下载此文件',
+                    icon: 'image://asset/img/ps1/main/down_img.png',
+                    onclick: function() {
+                        alert($("#tu3").data('url'))
+                    }
+                },
+                    saveAsImage : {show: true}
+                },
+                showTitle: true,
+                itemSize: 15,
+                itemGap: 10,
+            },
+        
+            tooltip: {
+                trigger: 'axis',
+                formatter: function(params) {
+                    return params[0].name  + ' : ' +params[0].value+'%';
+                  
+                },
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            grid: {
+                left: 110,
+                top: 85,
+                bottom: 40,
+                width: 328,
+                height:267
+        
+            },
+            xAxis : [
+                {
+                    
+                    type : 'category',
+                    data : ['19岁以下', '20-29岁', '30-39岁', '40-49岁', '50岁以上'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+           
+            yAxis : [
+                {   
+                
+                    interval:25,
+                    max:100,
+                    type : 'value',
+                    axisLabel: {
+                          show: true,
+                          formatter: '{value} %'
+                        }
+                },
+                {  
+                    interval:25,
+                     type : 'value',
+                     axisLabel: {
+                          show: false,
+        
+                        }
+                    
+                }
+            ],
+            
+        
+            series: [
+                {
+                    type: 'bar',
+                    barWidth : 20,
+                    stack: '总量',
+                    data: [37.5,80,70,47,30]
+                }
+            ]
+        };
+
+
+-----------------------------------------------------05公司-社交-微信----------------------------------------------------------------------------
+发布数
+
+app.title = '堆叠条形图';
+        var width=476;
+        var height=369;
+        var colors = ['#5eb3f4'];
+        option = {
+            color:colors,
+            width:width,
+            height:height,
+            title : {
+                padding:[20,0,0,20],
+                text: '发布数'
+            },
+            toolbox: {
+                left:1100,
+                padding:[20,20,0,-200],
+                show : true,
+                feature : {myTool2: {
+                    show: true,
+                    title: '下载此文件',
+                    icon: 'image://asset/img/ps1/main/down_img.png',
+                    onclick: function() {
+                        alert($("#tu3").data('url'))
+                    }
+                },
+                    saveAsImage : {show: true}
+                },
+                showTitle: true,
+                itemSize: 15,
+                itemGap: 10,
+            },
+            grid: {
+                left: 110,
+                top: 105,
+                bottom: 40,
+                width: 806,
+                height:203
+        
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['2016-5-13', '2016-5-14', '2016-5-15', '2016-5-16', '2016-5-17','2016-6-18', '2016-6-19', '2016-6-20', '2016-6-21'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+           
+            yAxis : [
+                {   
+                
+                    interval:1000,
+                    max:4000,
+                    type : 'value',
+                    axisLabel: {
+                          show: true,
+                          formatter: '{value}'
+                        }
+                },
+                {  
+                    max:4000,
+                    interval:1000,
+                     type : 'value',
+                     axisLabel: {
+                          show: false,
+        
+                        }
+                    
+                }
+            ],
+            
+        
+            series: [
+                {
+                    type: 'bar',
+                    barWidth : 20,
+                    stack: '总量',
+                    data: [2600,2000,2900,3300,2550,1800,2900,2200,2700]
+                }
+            ]
+        };
+
+----------------------------------------------
+数据统计
+
+app.title = '堆叠条形图';
+        var width=476;
+        var height=369;
+        var colors = ['#5eb3f4'];
+        option = {
+            color:colors,
+            width:width,
+            height:height,
+            title : {
+                padding:[20,0,0,20],
+                text: '数据统计'
+            },
+            toolbox: {
+                left:1100,
+                padding:[20,20,0,-200],
+                show : true,
+                feature : {myTool2: {
+                    show: true,
+                    title: '下载此文件',
+                    icon: 'image://asset/img/ps1/main/down_img.png',
+                    onclick: function() {
+                        alert($("#tu3").data('url'))
+                    }
+                },
+                    saveAsImage : {show: true}
+                },
+                showTitle: true,
+                itemSize: 15,
+                itemGap: 10,
+            },
+            grid: {
+                left: 110,
+                top: 105,
+                bottom: 40,
+                width: 806,
+                height:203
+            },
+            xAxis : [
+                {
+                    
+                    type : 'category',
+                    data : ['2016-5-13', '2016-5-14', '2016-5-15', '2016-5-16', '2016-5-17','2016-6-18', '2016-6-19', '2016-6-20', '2016-6-21'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+           
+            yAxis : [
+                {   
+                
+                    interval:1000,
+                    max:4000,
+                    type : 'value',
+                    axisLabel: {
+                          show: true,
+                          formatter: '{value}'
+                        }
+                },
+                {  
+                    max:4000,
+                    interval:1000,
+                     type : 'value',
+                     axisLabel: {
+                          show: false,
+        
+                        }
+                    
+                }
+            ],
+            
+        
+            series: [
+                {
+                    type: 'bar',
+                    barWidth : 20,
+                    stack: '总量',
+                    data: [2600,2000,2900,3300,2550,1800,2900,2200,2700]
+                }
+            ]
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+//增加input框键盘抬起计算工时
+    //全局变量
+            var sumGongshi=0;
+            var arr=[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],]
+            var gongshi=$('.gongshi');
+            gongshi.eq(0).on('change',function () {
+                if($(this).val()!==''){
+                    arr[0].push($(this).val())
+                    console.log(arr[0])
+                }else{
+                    arr[0].push(0)
+                }
+                if(arr[0].length==1){
+                    sumGongshi+=Number(arr[0][arr[0].length-1]);
+                }else{
+                    sumGongshi+=Number(arr[0][arr[0].length-1])-Number(arr[0][arr[0].length-2]);
+                }
+
+                $('.sumHour').html(sumGongshi)
+            })
+            gongshi.eq(1).on('change',function () {
+                if($(this).val()!==''){
+                    arr[1].push($(this).val())
+                    console.log(arr[1])
+                }else{
+                    arr[1].push(0)
+                }
+                if(arr[1].length==1){
+                    sumGongshi+=Number(arr[1][arr[1].length-1]);
+                }else{
+                    sumGongshi+=Number(arr[1][arr[1].length-1])-Number(arr[1][arr[1].length-2]);
+                }
+                $('.sumHour').html(sumGongshi)
+            })
+            $('.addBody').on('click',function() {
+                $(this).closest('table').find('tbody:last').find(".rili input").removeAttr('id').removeClass("hasDatepicker");
+                $(this).closest('table').append('<tbody>' + $(this).closest('table').find('tbody:last').html() + '</tbody>');
+                $('.rili input').each(function(index, element) {
+                    initDatePicker($(".rili input"));
+                });
+
+                //增加工时
+                var gongshi=$('.gongshi');
+                gongshi.on('blur',function (e) {
+                    var index=gongshi.index(this);
+                    console.log(index);
+                     if($(this).val()!==''){
+                         console.log($(this))
+                         console.log(index);
+                     arr[index].push($(this).val())
+                     console.log(arr[index])
+                     }else{
+                     arr[index].push(0)
+                     }
+                     if(arr[index].length==1){
+                     sumGongshi+=Number(arr[index][arr[index].length-1]);
+                     }else{
+                     sumGongshi+=Number(arr[index][arr[index].length-1])-Number(arr[index][arr[index].length-2]);
+                     }
+                     $('.sumHour').html(sumGongshi)
+                })
+            });
+            $('.removeBody').on('click',function () {
+                var $holdTable=$(this).closest('table');
+                if($holdTable.find('tbody').length==2){
+                    return;
+                }else{
+                    //增加input框键盘抬起计算工时
+                    var gongshi=$('.gongshi');
+                    var index=gongshi.length-1;
+                    var sumGongshiminus=sumGongshi-Number($('.gongshi:last').val())
+                    $('.sumHour').eq(0).html(sumGongshiminus);
+                    sumGongshi-=Number($('.gongshi:last').val());
+                    arr[index]=[];
+                    $holdTable.find('tbody:last').remove();
+                }
+            })
+
+
+详见：http://pm.maxrocky.com/manHour/entering  101.html

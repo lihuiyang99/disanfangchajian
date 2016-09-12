@@ -1,0 +1,9 @@
+jqcloud
+jquerytablesorter  //表格排序的插件
+swiper
+tooltipster  //例如：？划上出信息
+echarts.min.js
+jquery.fullscreen-min.js
+jquery.windstagball.js
+jquery.windstagballsmall.js
+jqueryui/i18n/datepicker-zh-CN.js

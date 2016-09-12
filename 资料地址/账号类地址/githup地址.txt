@@ -1,0 +1,61 @@
+全日制           https://github.com/zhufengpeixun/JavaScript201603
+
+
+周末班            https://github.com/WakeUpPig/zhufeng201603week
+
+angularjs：       https://github.com/zhufengpeixun1/angularjs
+
+进度条插件：      http://www.cnblogs.com/lhb25/archive/2012/10/24/jquery-loading-animation-and-progress-bar-plugins.html
+
+bootstrap官网    http://v3.bootcss.com/
+                  ngnice.com
+
+fiddle  抓取信息
+
+博客建站 ：      https://hexo.io/zh-cn/docs/setup.html
+
+C:\Windows\System32\drivers\etc  修改host
+
+                   http://zhufengnodejs.github.io/zhufengdocs/
+                 https://github.com/zhufengnodejs/webpack-201605
+                 https://zhufengnodejs.github.io/doc/
+
+                  mongoDB：64位 http://pan.baidu.com/s/1hsDBRRu 
+
+ 安装说明          http://school.zhufengpeixun.cn/course/36
+
+node最后课件：    https://github.com/zhufengnodejs/2016node5th
+
+vue.js 作品        http://app.video.baidu.com/spa/cece/
+
+node最初           https://github.com/zhufengpeixun1/zhufeng_node5
+
+                   http://node.zhufengpeixun.cn/
+
+压缩工具css：      http://tool.css-js.com/
+
+压缩工具图片：     https://tinypng.com/
+
+git视频            http://school.zhufengpeixun.cn/course/31
+动画库             http://old.zhufengpeixun.cn/tween/ 
+
+缓存png            http://7xjf2l.com1.z0.glb.clouddn.com/cache.png
+
+
+猪猪课堂           http://study.zhufengpeixun.cn/boards/2/topics/43?r=44#message-44  
+
+面试题:              https://zhufengnodejs.github.io/doc/html/NODEJS/%E7%8F%A0%E5%B3%B0%E5%8D%9A%E5%AE%A2.html
+
+ps                 http://www.imooc.com/learn/506
+
+
+使用click  把300ms延迟解决  FastClick
+    轻量级的移动端事件库
+    1、强力推荐  Zepto.js（小心的jquery库）  这个库中提供了移动端转悠的事件及提供了css3动画支持  1、专注于移动端  比jquery小 方法较少常用方法  3、支持css3动画  上述但手指操作都支持
+    
+    
+    2、touch.js百度云touch
+    
+    3、hammer.js（国际手势事件库）
+
+官方下载 https://www.mongodb.org/downloads 百度云下载 32位 http://pan.baidu.com/s/1c1Y26Py 64位 http://pan.baidu.com/s/1hsDBRRu 客户端 http://pan.baidu.com/s/1bpdorRD
